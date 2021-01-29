@@ -1,0 +1,29 @@
+{
+  "name": "CC2531 flash addon for HA with RaspberryPi",
+  "version": "1.0.6",
+  "slug": "ha_flash_cc2531",
+  "url": "https://github.com/kimtc99/HAaddon",
+  "description": "cc2531 플래싱 애드온",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "map": [
+    "share:rw"
+  ],
+  "startup": "application",
+  "boot": "manual",
+  "gpio": "true",
+  "privileged": ["SYS_RAWIO"],
+  "devices": ["/dev/mem:/dev/mem:rw", "/dev/gpiomem:/dev/gpiomem:rw"],
+  "apparmor": "true",
+  "options": {
+    "coordinator": true,
+    "zigbee3": true,
+    "router_level": 0,
+    "flags": ""
+  },
+  "schema": {
+    "coordinator": "bool",
+    "zigbee3": "bool",
+    "router_level": "list(0|1|2)",
+    "flags": "str"
+  }
+}
